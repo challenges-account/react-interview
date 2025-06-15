@@ -1,3 +1,3 @@
 set -e
 
-npm install
+pnpm install
