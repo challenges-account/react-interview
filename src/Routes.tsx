@@ -5,8 +5,9 @@ import {
   RouterProvider,
 } from "react-router";
 import RootLayout from "@/layouts/RootLayout";
-import TodoListsEmptyState from "@/pages/TodoLists/TodoListsEmptyState";
+import Welcome from "@/pages/TodoLists/EmptyState/Welcome";
 import TodoListItems from "@/pages/TodoListItems/TodoListItems";
+import TodoListNew from "./pages/TodoLists/New/TodoListNew";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,8 @@ const router = createBrowserRouter([
         path: "todo-lists",
         Component: Outlet,
         children: [
-          { index: true, Component: TodoListsEmptyState },
+          { index: true, Component: Welcome },
+          { path: "new", Component: TodoListNew },
           {
             path: ":todoListId",
             Component: TodoListItems,
