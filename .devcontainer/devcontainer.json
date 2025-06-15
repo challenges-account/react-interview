@@ -3,6 +3,15 @@
 	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
 	"postCreateCommand": [
 		"bash",
-		"../.devcontainer/postCreate.sh"
-	]
+		".devcontainer/postCreate.sh"
+	],
+	"forwardPorts": [
+		5173
+	],
+	"portsAttributes": {
+		"5173": {
+			"label": "Vite Dev Server",
+			"onAutoForward": "notify"
+		}
+	}
 }
