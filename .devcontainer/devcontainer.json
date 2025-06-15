@@ -13,5 +13,12 @@
 			"label": "Vite Dev Server",
 			"onAutoForward": "notify"
 		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"esbenp.prettier-vscode"
+			]
+		}
 	}
 }

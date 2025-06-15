@@ -1,4 +1,3 @@
-
 # react-interview
 
 This is a simple React application using Vite as the build tool. Candidates are expected to build a Todo List UI by consuming the provided API. The scaffold includes basic setup and configurations to get started quickly.
