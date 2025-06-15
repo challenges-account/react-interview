@@ -1,12 +1,13 @@
-import TodoListsEmptyState from "./components/TodoListsEmptyState";
 import TodoListHeader from "./components/TodoListsHeader";
+import { TodoListContent } from "./components/TodoListContent";
 
-const TodoLists = () => (
-  <div className="p-6">
-    <TodoListHeader title="To-do Lists" />
-    <TodoListsEmptyState />
-    {/* Additional components like TodoListItems can be added here */}
-  </div>
-);
+const TodoLists = () => {
+  return (
+    <div className="p-6">
+      <TodoListHeader title="To-do Lists" />
+      <TodoListContent />
+    </div>
+  );
+};
 
 export default TodoLists;

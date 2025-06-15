@@ -3,16 +3,27 @@ import { useNavigate } from "react-router";
 import { CheckCircleIcon } from "@phosphor-icons/react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useCreateTodoList } from "@/api/todoList";
 
 const TodoListNew = () => {
   const [name, setName] = useState("");
   const navigate = useNavigate();
+  const createTodoList = useCreateTodoList();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // TODO api call and
-    navigate("/todo-lists");
+    createTodoList.mutate(
+      { name: name.trim() },
+      {
+        onSuccess: (newTodoList) => {
+          navigate(`/todo-lists/${newTodoList.id}`);
+        },
+        onError: (error) => {
+          console.error("Failed to create todo list:", error);
+        },
+      },
+    );
   };
 
   return (
@@ -37,9 +48,13 @@ const TodoListNew = () => {
           />
         </div>
 
-        <Button type="submit" disabled={!name.trim()} className="w-full">
+        <Button
+          type="submit"
+          disabled={!name.trim() || createTodoList.isPending}
+          className="w-full"
+        >
           <CheckCircleIcon size={20} weight="bold" />
-          Create Todo List
+          {createTodoList.isPending ? "Creating..." : "Create Todo List"}
         </Button>
       </form>
     </div>
