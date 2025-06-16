@@ -10,6 +10,6 @@ interface CreateTodoListItemDto {
 }
 
 interface UpdateTodoListItemDto {
-  name?: string;
-  completed?: boolean;
+  name: string;
+  completed: boolean;
 }

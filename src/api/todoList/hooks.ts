@@ -28,8 +28,7 @@ export const useCreateTodoList = () => {
 
 export const useUpdateTodoList = (id: string) => {
   return useMutation({
-    mutationFn: (data: Partial<CreateTodoListDto>) =>
-      TodoListsApi.update(id, data),
+    mutationFn: (data: UpdateTodoListDto) => TodoListsApi.update(id, data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["todoLists"] });
       queryClient.invalidateQueries({ queryKey: ["todoList", id] });

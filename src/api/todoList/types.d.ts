@@ -6,3 +6,7 @@ interface TodoList {
 interface CreateTodoListDto {
   name: string;
 }
+
+interface UpdateTodoListDto {
+  name: string;
+}

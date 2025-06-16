@@ -32,7 +32,7 @@ const TodoListItemsApi = {
     itemId: string,
     data: UpdateTodoListItemDto,
   ): Promise<TodoListItem> => {
-    const response = await axiosClient.patch(
+    const response = await axiosClient.put(
       `/todolists/${todoListId}/items/${itemId}`,
       data,
     );
@@ -41,14 +41,6 @@ const TodoListItemsApi = {
 
   delete: async (todoListId: string, itemId: string): Promise<void> => {
     await axiosClient.delete(`/todolists/${todoListId}/items/${itemId}`);
-  },
-
-  toggleComplete: async (
-    todoListId: string,
-    itemId: string,
-    completed: boolean,
-  ): Promise<TodoListItem> => {
-    return TodoListItemsApi.update(todoListId, itemId, { completed });
   },
 };
 

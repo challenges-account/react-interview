@@ -18,11 +18,8 @@ const TodoListsApi = {
     return response.data;
   },
 
-  update: async (
-    id: string,
-    data: Partial<CreateTodoListDto>,
-  ): Promise<TodoList> => {
-    const response = await axiosClient.patch(`${BASE_URL}/${id}`, data);
+  update: async (id: string, data: UpdateTodoListDto): Promise<TodoList> => {
+    const response = await axiosClient.put(`${BASE_URL}/${id}`, data);
     return response.data;
   },
 
