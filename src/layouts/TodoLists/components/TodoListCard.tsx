@@ -26,7 +26,7 @@ const TodoListCard = ({ todoList, onDeleteClick }: TodoListCardProps) => {
     >
       <span className="text-gray-700 font-medium">{todoList.name}</span>
       <button
-        aria-label="Delete todo list"
+        aria-label="Delete to-do list"
         className="text-gray-400 hover:text-red-500 transition-colors"
         onClick={handleDeleteClick}
       >

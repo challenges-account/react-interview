@@ -43,7 +43,7 @@ export function TodoListContent() {
     // TODO improve error
     return (
       <div className="p-4 text-red-500">
-        Error loading todo lists. Please try again.
+        Error loading to-do lists. Please try again.
       </div>
     );
   }
