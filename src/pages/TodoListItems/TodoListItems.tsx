@@ -10,7 +10,7 @@ const TodoListItems = () => {
   const { todoListId } = useParams();
 
   if (!todoListId) {
-    return <div className="p-4 text-red-500">No todo list ID provided.</div>;
+    return <div className="p-4 text-red-500">No to-do list ID provided.</div>;
   }
 
   const { data: todoList, isLoading, isError } = useTodoList(todoListId);

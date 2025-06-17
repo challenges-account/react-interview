@@ -26,11 +26,11 @@ export const ClearTodoList = ({ todoListId }: ClearTodoListProps) => {
         size="sm"
         onClick={() => setOpen(true)}
         disabled={isPending}
-        aria-label="Clear all items in this todo list"
+        aria-label="Clear all items in this to-do list"
         className="flex items-center gap-2"
       >
         <TrashIcon size={16} weight="bold" />
-        Clear Todo List
+        Clear To-do List
       </Button>
       <ConfirmationModal
         isOpen={open}
@@ -41,7 +41,7 @@ export const ClearTodoList = ({ todoListId }: ClearTodoListProps) => {
         cancelLabel="Cancel"
         isLoading={isPending}
       >
-        This will permanently delete all items in this todo list. This action
+        This will permanently delete all items in this to-do list. This action
         cannot be undone.
       </ConfirmationModal>
     </>

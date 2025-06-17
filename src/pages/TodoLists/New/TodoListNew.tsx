@@ -20,7 +20,7 @@ const TodoListNew = () => {
           navigate(`/todo-lists/${newTodoList.id}`);
         },
         onError: (error) => {
-          console.error("Failed to create todo list:", error);
+          console.error("Failed to create to-do list:", error);
         },
       },
     );
@@ -54,7 +54,7 @@ const TodoListNew = () => {
           className="w-full"
         >
           <CheckCircleIcon size={20} weight="bold" />
-          {createTodoList.isPending ? "Creating..." : "Create Todo List"}
+          {createTodoList.isPending ? "Creating..." : "Create To-do List"}
         </Button>
       </form>
     </div>
