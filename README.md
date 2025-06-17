@@ -1,17 +1,79 @@
-# react-interview
+# React Todo Lists Application
 
-This is a simple React application using Vite as the build tool. Candidates are expected to build a Todo List UI by consuming the provided API. The scaffold includes basic setup and configurations to get started quickly.
+A Todo List application built with React, TypeScript, and TanStack Query. Users can create multiple todo lists, add items to lists, mark items as completed, and delete lists and items.
+
+## Features
+
+- Create and manage multiple todo lists
+- Add, complete, and delete todo items within lists
+- View todo completion status
+
+## Architecture
+
+- **UI**: Built with Tailwind CSS
+- **Error Handling**: API error handling with retries
+- **Data Management**: Data fetching with React Query
+
+## Technology Stack
+
+- **React 19**: React framework
+- **TypeScript**: Static typing
+- **React Router v7**: Client-side routing
+- **TanStack Query v5**: Data fetching and state management
+- **Axios**: API requests
+- **Tailwind CSS v4**: CSS framework
+- **Phosphor Icons**: Icon library
+- **shadcn/ui**: Component library built on Radix UI
+- **Vitest**: Testing framework
+
+## Project Structure
+
+```
+src/
+├── api/                 # API client and service layer
+│   ├── client.ts        # Axios instance
+│   ├── queryClient.ts   # Query configuration
+│   ├── todoList/        # Todo list services
+│   │   └── items/       # Todo list items services
+├── components/          # UI components
+│   └── ui/              # Base components
+├── layouts/             # Layouts
+│   └── TodoLists/       # TodoLists layout
+├── lib/                 # Utils
+├── pages/               # Pages
+│   ├── TodoListItems/   # Items page
+│   └── TodoLists/       # Lists pages
+└── Routes.tsx           # Routes
+```
+
+## Getting Started
 
 ### Installation
 
-This project provides a development environment using **devContainers**. Open the repository in a devContainer using your preferred IDE (e.g., VS Code). The devContainer will have all dependencies pre-installed.
+```bash
+# Install dependencies
+pnpm install
 
-## Contact
+# Start development server
+pnpm dev
+```
 
-- Martín Fernández (mfernandez@crunchloop.io)
+The application runs at `http://localhost:5173`.
 
-## About Crunchloop
+## Development
 
-![crunchloop](https://s3.amazonaws.com/crunchloop.io/logo-blue.png)
+### Scripts
 
-We strongly believe in giving back :rocket:. Let's work together [`Get in touch`](https://crunchloop.io/#contact).
+- `pnpm dev`: Start dev server
+- `pnpm build`: Build for production
+- `pnpm typecheck`: Run type checking
+- `pnpm lint`: Run ESLint
+- `pnpm format`: Format code
+- `pnpm test`: Run Vitest tests
+- `pnpm test:watch`: Watch Vitest tests
+
+## Error Handling
+
+- Retries for API requests in `queryClient.ts`
+- Error messages for users
+- Error states in UI
