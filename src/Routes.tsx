@@ -8,11 +8,13 @@ import RootLayout from "@/layouts/RootLayout";
 import Welcome from "@/pages/TodoLists/EmptyState/Welcome";
 import TodoListItems from "@/pages/TodoListItems/TodoListItems";
 import TodoListNew from "./pages/TodoLists/New/TodoListNew";
+import { RouterErrorBoundary } from "@/layouts/RouterErrorBoundary";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
+    errorElement: <RouterErrorBoundary />,
     children: [
       {
         index: true,
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
             Component: TodoListItems,
           },
         ],
+      },
+      {
+        path: "*",
+        element: <Navigate to="/todo-lists" replace />,
       },
     ],
   },
