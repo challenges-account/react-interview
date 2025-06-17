@@ -58,20 +58,14 @@ export const useDeleteTodoListItem = (todoListId: string) => {
   });
 };
 
-export const useToggleTodoListItemComplete = (
-  todoListId: string,
-  itemId: string,
-) => {
+export const useDeleteAllTodoListItems = (todoListId: string) => {
   return useMutation({
-    mutationFn: (completed: boolean) =>
-      TodoListItemsApi.toggleComplete(todoListId, itemId, completed),
+    mutationFn: () => TodoListItemsApi.deleteAll(todoListId),
     onSuccess: () => {
-      queryClient.invalidateQueries({
-        queryKey: ["todoListItem", todoListId, itemId],
-      });
       queryClient.invalidateQueries({
         queryKey: ["todoListItems", todoListId],
       });
+      queryClient.invalidateQueries({ queryKey: ["todoList", todoListId] });
     },
   });
 };

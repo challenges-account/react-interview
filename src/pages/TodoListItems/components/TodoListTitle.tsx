@@ -4,6 +4,7 @@ import Spinner from "@/components/ui/spinner";
 import { cn } from "@/lib/utils";
 import { PencilSimpleIcon, CheckIcon, XIcon } from "@phosphor-icons/react";
 import { Input } from "@/components/ui/input";
+import { ClearTodoList } from "./ClearTodoList";
 
 interface TodoListTitleProps {
   className?: string;
@@ -18,7 +19,7 @@ export const TodoListTitle = ({
   isLoading,
   todoListId,
 }: TodoListTitleProps) => {
-  const fallbackName = "Todo List";
+  const fallbackName = "To-do List";
   const updateTodoList = useUpdateTodoList(todoListId);
 
   const [isEditing, setIsEditing] = useState(false);
@@ -108,6 +109,9 @@ export const TodoListTitle = ({
       >
         <PencilSimpleIcon size={20} weight="bold" />
       </button>
+      <div className="ml-auto">
+        <ClearTodoList todoListId={todoListId} />
+      </div>
     </div>
   );
 };

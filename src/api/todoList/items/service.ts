@@ -42,6 +42,10 @@ const TodoListItemsApi = {
   delete: async (todoListId: string, itemId: string): Promise<void> => {
     await axiosClient.delete(`/todolists/${todoListId}/items/${itemId}`);
   },
+
+  deleteAll: async (todoListId: string): Promise<void> => {
+    await axiosClient.delete(`/todolists/${todoListId}/items`);
+  },
 };
 
 export default TodoListItemsApi;
