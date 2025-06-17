@@ -39,6 +39,7 @@ export const TodoListNewItemForm = ({
           placeholder="Add a new item..."
           disabled={isPending}
           className="flex-1"
+          autoFocus
         />
         <Button
           type="submit"

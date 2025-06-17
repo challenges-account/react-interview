@@ -45,6 +45,7 @@ const TodoListNew = () => {
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter list name"
             required
+            autoFocus
           />
         </div>
 
