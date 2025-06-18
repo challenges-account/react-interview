@@ -36,7 +36,8 @@ src/
 │   ├── todoList/        # Todo list services
 │   │   └── items/       # Todo list items services
 ├── components/          # UI components
-│   └── ui/              # Base components
+│   ├── ui/              # Base components
+│   └── error-handling/  # Error handling components
 ├── layouts/             # Layouts
 │   └── TodoLists/       # TodoLists layout
 ├── lib/                 # Utils
