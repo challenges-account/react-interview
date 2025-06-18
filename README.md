@@ -52,8 +52,7 @@ src/
 ### Installation
 
 ```bash
-# Install dependencies
-pnpm install
+# Open in container. Then pnpm install will be performed automatically
 
 # Start development server
 pnpm dev
