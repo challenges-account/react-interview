@@ -67,7 +67,7 @@ describe("LinkButton Component", () => {
     urls.forEach((url) => {
       const { unmount } = render(<LinkButton to={url} icon={MockIcon} />);
       expect(screen.getByTestId("mock-link")).toHaveAttribute("href", url);
-      unmount(); ¿
+      unmount();
     });
   });
 });
