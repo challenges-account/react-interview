@@ -20,7 +20,6 @@ export function TodoListContent() {
     setTodoListToDelete(null);
   };
 
-  // TODO improve error handling
   const handleDeleteConfirm = () => {
     if (!todoListToDelete) return;
 
@@ -40,7 +39,6 @@ export function TodoListContent() {
   }
 
   if (error) {
-    // TODO improve error
     return (
       <div className="p-4 text-red-500">
         Error loading to-do lists. Please try again.

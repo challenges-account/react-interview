@@ -28,7 +28,6 @@ export function ConfirmationModal({
     onConfirm();
   };
 
-  // Stop propagation to prevent closing when clicking inside
   const handleModalClick = (e: React.MouseEvent) => {
     e.stopPropagation();
   };
