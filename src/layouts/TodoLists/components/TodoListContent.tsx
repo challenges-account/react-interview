@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router";
 import Spinner from "@/components/ui/spinner";
 import TodoListCard from "./TodoListCard";
 import TodoListsEmptyState from "./TodoListsEmptyState";
@@ -11,6 +12,8 @@ export function TodoListContent() {
   const [todoListToDelete, setTodoListToDelete] = useState<TodoList | null>(
     null,
   );
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const openDeleteModal = (todoList: TodoList) => {
     setTodoListToDelete(todoList);
@@ -23,9 +26,17 @@ export function TodoListContent() {
   const handleDeleteConfirm = () => {
     if (!todoListToDelete) return;
 
+    const isViewingDeletedList = location.pathname.includes(
+      `/todo-lists/${todoListToDelete.id}`,
+    );
+
     mutate(todoListToDelete.id, {
       onSuccess: () => {
         closeDeleteModal();
+
+        if (isViewingDeletedList) {
+          navigate("/todo-lists");
+        }
       },
     });
   };
