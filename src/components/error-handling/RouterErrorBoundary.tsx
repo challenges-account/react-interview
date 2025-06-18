@@ -1,4 +1,4 @@
-import ErrorScreen from "../components/ui/ErrorScreen";
+import ErrorScreen from "./ErrorScreen";
 import { isRouteErrorResponse, useRouteError } from "react-router";
 
 export function RouterErrorBoundary() {

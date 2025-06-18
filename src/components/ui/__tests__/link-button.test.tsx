@@ -64,9 +64,10 @@ describe("LinkButton Component", () => {
   it("supports different navigation paths", () => {
     const urls = ["/simple-path", "/nested/path/here", "/items/123", "/"];
 
-    for (const url of urls) {
+    urls.forEach((url) => {
       const { unmount } = render(<LinkButton to={url} icon={MockIcon} />);
       expect(screen.getByTestId("mock-link")).toHaveAttribute("href", url);
-    }
+      unmount(); ¿
+    });
   });
 });

@@ -8,7 +8,7 @@ import RootLayout from "@/layouts/RootLayout";
 import Welcome from "@/pages/TodoLists/EmptyState/Welcome";
 import TodoListItems from "@/pages/TodoListItems/TodoListItems";
 import TodoListNew from "./pages/TodoLists/New/TodoListNew";
-import { RouterErrorBoundary } from "@/layouts/RouterErrorBoundary";
+import { RouterErrorBoundary } from "@/components/error-handling/RouterErrorBoundary";
 
 const router = createBrowserRouter([
   {
