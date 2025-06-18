@@ -31,10 +31,10 @@ export const TodoListItemsList = ({ todoListId }: TodoListItemsListProps) => {
   }
 
   return (
-    <div className="mt-4">
+    <ul className="mt-4">
       {items.map((item) => (
         <TodoListItem key={item.id} item={item} todoListId={todoListId} />
       ))}
-    </div>
+    </ul>
   );
 };

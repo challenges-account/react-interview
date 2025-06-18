@@ -14,15 +14,24 @@ const TodoListCard = ({ todoList, onDeleteClick }: TodoListCardProps) => {
   };
 
   const handleDeleteClick = (e: React.MouseEvent) => {
-    // Stop propagation to prevent card navigation
     e.stopPropagation();
     onDeleteClick();
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") {
+      handleCardClick();
+    }
+  };
+
   return (
-    <div
+    <li
       className="flex justify-between items-center p-4 bg-white rounded-md shadow-sm border border-gray-100 mb-2 hover:shadow-md transition-shadow cursor-pointer"
       onClick={handleCardClick}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
+      role="button"
+      aria-label={`View ${todoList.name}`}
     >
       <span className="text-gray-700 font-medium">{todoList.name}</span>
       <button
@@ -32,7 +41,7 @@ const TodoListCard = ({ todoList, onDeleteClick }: TodoListCardProps) => {
       >
         <TrashIcon size={20} weight="bold" />
       </button>
-    </div>
+    </li>
   );
 };
 

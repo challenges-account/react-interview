@@ -54,7 +54,7 @@ export function TodoListContent() {
 
   return (
     <>
-      <div className="mt-6 max-h-[calc(100vh-6rem)] overflow-y-auto pr-2 pb-4">
+      <ul className="mt-6 max-h-[calc(100vh-6rem)] overflow-y-auto pr-2 pb-4">
         {todoLists.map((todoList) => (
           <TodoListCard
             key={todoList.id}
@@ -62,7 +62,7 @@ export function TodoListContent() {
             onDeleteClick={() => openDeleteModal(todoList)}
           />
         ))}
-      </div>
+      </ul>
 
       {todoListToDelete && (
         <ConfirmationModal

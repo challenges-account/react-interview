@@ -30,7 +30,7 @@ export const TodoListItem = ({ item, todoListId }: TodoListItemProps) => {
   };
 
   return (
-    <div className="flex items-center justify-between py-3 px-1 border-b border-gray-100 group">
+    <li className="flex items-center justify-between py-3 px-1 border-b border-gray-100 group">
       <div className="flex items-center gap-3 flex-1">
         <Checkbox
           id={`checkbox-${item.id}`}
@@ -61,6 +61,6 @@ export const TodoListItem = ({ item, todoListId }: TodoListItemProps) => {
       >
         <TrashIcon size={18} weight="bold" />
       </button>
-    </div>
+    </li>
   );
 };
